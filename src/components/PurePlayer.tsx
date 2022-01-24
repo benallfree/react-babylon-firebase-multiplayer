@@ -9,6 +9,13 @@ export type PurePlayerProps = {
   state: PlayerState
 }
 
+/**
+ * A pure presentation layer component concerned only with
+ * rendering based on props. I thnk this causes a flicker.
+ * It also passes a meshRef back to the parent for optimistic
+ * changes made in the animation loop.
+ *
+ */
 export const PurePlayer: FC<PurePlayerProps> = (props) => {
   const { state, meshRef } = props
   const { name, position, rotation, avatar } = state

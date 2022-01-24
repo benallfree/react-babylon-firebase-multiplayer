@@ -14,6 +14,11 @@ export type LocalPlayerProps = {
   avatar: PlayerAvatar
 }
 
+/**
+ * High Order Component containing all kinds of state management
+ * and synchronization logic. Study all the hooks for full understanding.
+ *
+ */
 export const LocalPlayer: FC<LocalPlayerProps> = (props) => {
   const { name, avatar } = props
   const exp = +new Date() + 5000
