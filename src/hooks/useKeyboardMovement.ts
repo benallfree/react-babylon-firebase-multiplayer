@@ -25,6 +25,7 @@ export const useKeyboardMovement = (
         a: { x: 0 },
         d: { x: 0 }
       }
+      console.log(kbInfo.type, kbInfo.event.key)
       switch (kbInfo.type) {
         case KeyboardEventTypes.KEYDOWN: {
           const { key } = kbInfo.event

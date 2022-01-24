@@ -14,7 +14,6 @@ export const useBroadcastMovement = (
   useEffect(() => {
     if (!realPosition) return
     const _update = () => {
-      console.log('updating')
       setPosition((oldPosition) => {
         const newPosition = oldPosition.clone()
         forEach(['x', 'y', 'z'], (axis) => {
@@ -22,7 +21,6 @@ export const useBroadcastMovement = (
           newPosition[_axis] = realPosition[_axis]
         })
         savePlayerState(name, { position: newPosition })
-        console.log(name, newPosition)
         return newPosition
       })
     }
@@ -40,7 +38,6 @@ export const useBroadcastMovement = (
      */
     const tid = setInterval(_update, 100)
     return () => {
-      console.log('clearing')
       clearInterval(tid)
     }
   }, [name, x, z, realPosition, setPosition])
