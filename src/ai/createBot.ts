@@ -16,7 +16,8 @@ export const createBot = async () => {
       color: `${randomColor()}`
     },
     position: randomPosition(),
-    rotation: Vector3.Zero()
+    rotation: Vector3.Zero(),
+    movement: { x: 0, z: 0 }
   }
 
   const { name, avatar } = botInfo
