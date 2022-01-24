@@ -9,12 +9,12 @@ import { PurePlayer } from './PurePlayer'
 import { useKeyboardMovement } from '../hooks/useKeyboardMovement'
 import { useBroadcastMovement } from '../hooks/useBroadcastMovement'
 
-export type PlayerProps = {
+export type LocalPlayerProps = {
   name: PlayerName
   avatar: PlayerAvatar
 }
 
-export const Player: FC<PlayerProps> = (props) => {
+export const LocalPlayer: FC<LocalPlayerProps> = (props) => {
   const { name, avatar } = props
   const exp = +new Date() + 5000
   const [position, setPosition] = useState(randomPosition())
